@@ -1,0 +1,7 @@
+export PS1=""
+alias ayy="echo lmao"
+alias i3conf="nano ~/.config/i3/config"
+alias i3lock="i3lock-fancy"
+
+##BOOTUP
+screenfetch

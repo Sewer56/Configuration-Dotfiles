@@ -1,0 +1,20 @@
+"*":
+  "autocomplete-clang": {}
+  core:
+    autoHideMenuBar: true
+    telemetryConsent: "no"
+  editor:
+    fontSize: 12
+    invisibles: {}
+  "exception-reporting":
+    userId: "c7c82572-a968-d655-6054-47aaf7b542d5"
+  "gpp-compiler":
+    compileToTmpDirectory: false
+    cppCompilerOptions: "-Ofast"
+    runAfterCompile: false
+  hidpi: {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
