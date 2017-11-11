@@ -9,7 +9,7 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Roboto Mono 11
+font = Unifont 12
 scrollback_lines = 20000
 search_wrap = true
 
@@ -21,48 +21,30 @@ pseudo_transparency = false
 cursor_blink = system
 cursor_shape = block
 
+# Colours
 [colors]
-background = #21252B
-cursor = #1F1F1F
+foreground = rgb(239, 240, 235)
+foreground_bold = rgb(239, 240, 235)
+background = rgba(20, 25, 31, 0.70)
 
-# special
-foreground      = #c5c8c6
-foreground_bold = #c5c8c6
-cursor          = #c5c8c6
+# If unset, will reverse foreground and background
+highlight = #2f2f2f
 
-# black
-color0  = #282a2e
-color8  = #373b41
+# Colors from original hyper-snazzy theme
+color0 = rgb(40,42,56)
+color1 = rgb(255,92,87)
+color2 = rgb(90,247,142)
+color3 = rgb(243,249,157)
+color4 = rgb(87,199,255)
+color5 = rgb(255,106,193)
+color6 = rgb(154,237,254)
+color7 = rgb(241,241,240)
 
-# red
-color1  = #a54242
-color9  = #cc6666
-
-# green
-color2  = #8c9440
-color10 = #b5bd68
-
-# yellow
-color3  = #de935f
-color11 = #f0c674
-
-# blue
-color4  = #5f819d
-color12 = #81a2be
-
-# magenta
-color5  = #85678f
-color13 = #b294bb
-
-# cyan
-color6  = #5e8d87
-color14 = #8abeb7
-
-# white
-color7  = #707880
-color15 = #c5c8c6
-
-
-
-[hints]
-foreground = #55FFFF
+# Other default termite colors
+color9 = #dca3a3
+color10 = #c3bf9f
+color11 = #f0dfaf
+color12 = #94bff3
+color13 = #ec93d3
+color14 = #93e0e3
+color15 = #ffffff

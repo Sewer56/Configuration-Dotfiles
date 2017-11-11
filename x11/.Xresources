@@ -1,18 +1,12 @@
 ~/.Xresources
 
-Xft.dpi: 180
-Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
-
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme 'bg',     'fg',     'bgalt',  'hlbg',   'hlfg'
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: #232323, #E5CD99, #232323
-rofi.color-normal: #232323, #E5CD99, #232323, #E5CD99, #232323
-rofi.color-active: #232323, #E5CD99, #232323, #E5CD99, #232323
-rofi.color-urgent: #232323, #E5CD99, #232323, #E5CD99, #232323
+rofi.color-normal: #00232323, #E5CD99, #00232323, #E5CD99, #232323
+rofi.color-active: #00232323, #E5CD99, #00232323, #E5CD99, #232323
+rofi.color-urgent: #00232323, #E5CD99, #00232323, #E5CD99, #232323
+
+!                  'background', 'border', 'separator'
+rofi.color-window: #AA232323, #AA232323, #232323

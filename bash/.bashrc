@@ -1,5 +1,5 @@
 export PS1="\[\033[38;5;10m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\] ~ \[$(tput sgr0)\]"
 alias ayy="echo lmao"
 alias suspend="systemctl suspend"
-alias i3conf="nano ~/.config/i3/config"
+alias i3conf="code ~/.config/i3/config"
 alias i3lock="i3lock-fancy"

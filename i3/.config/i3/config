@@ -7,11 +7,11 @@
 #
 
 ##SETUP DISPLAY
-exec_always xrandr --dpi 180
-exec mpd
+#exec_always xrandr --dpi 180
+#exec mpd
 
 #######Productivity#########
-exec_always xrandr --output DVI-0 --mode 1920x1080 --rate 144.00 --fb 7680x2160 --pos 0x0 --scale 2x2 --primary --output DisplayPort-0 --pos 3840x0 --scale 1x1
+#exec_always xrandr --output DVI-0 --mode 1920x1080 --rate 144.00 --fb 7680x2160 --pos 0x0 --scale 2x2 --primary --output DisplayPort-0 --pos 3840x0 --scale 1x1
 
 #######GAMING########
 #exec_always xrandr --output DVI-D-0 --mode 1920x1080 --rate 144.00 --scale 1x1 --primary --output DisplayPort-0 --right-of DVI-D-0
@@ -28,7 +28,7 @@ set $mod Mod1
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Roboto Mono Medium 9
+font pango:FontAwesome 9
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -44,17 +44,7 @@ floating_modifier $mod
 bindsym $mod+Return exec termite
 
 # kill focused window
-bindsym $mod+F4 kill
-
-# start xfce4-appfinder
-bindsym $mod+F2 exec "xfce4-appfinder";
-for_window [class="Xfce4-appfinder"] floating enable; focus;
-for_window [class="Xfce4-appfinder"] focus; resize shrink width 10000px; resize grow width 545px; resize shrink height 10000px; resize grow height 442px;
-
-# start dmenu (a program launcher)
-# There also is the (new) i3-dmenu-desktop which only displays applications
-bindsym $mod+F3 exec rofi -show run -lines 10 -eh 1 -fullscreen -padding 300 -font "Roboto Mono Medium 20"
-
+bindsym $mod+Shift+q kill
 
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -111,33 +101,39 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 set $workspace1 "1:"
-set $workspace2 "2:"
-set $workspace3 "3:"
-set $workspace4 "4:"
+set $workspace2 "2:"
+set $workspace3 "3:"
+set $workspace4 "4:"
+set $workspace5 "5:"
+set $workspace6 "6:"
+set $workspace7 "7:"
+set $workspace8 "8:"
+set $workspace9 "9:"
+set $workspace10 "10:"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
 bindsym $mod+Shift+4 move container to workspace $workspace4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -178,83 +174,69 @@ bar{
   i3bar_command i3bar -t
 	status_command i3blocks
   position top
+  height 30
+  #tray_output none
+  separator_symbol "—"
 	colors {
         background #00000080
         statusline #ffffff
-	inactive_workspace #00000080 #00000080 #000000
+        separator #adadad
+	inactive_workspace #00000080 #00000080 #666666
 	urgent_workspace   #00000080 #00000080 #dd000080
 	focused_workspace  #00000080 #00000080 #ffffff
     }
 }
 
-gaps outer 20
-gaps inner 20
-
-exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
-
 # Window colours:
  #border bg text indicator
 
    client.focused              #C6A677 #C6A677 #232323 #C6A677
-   client.focused_inactive     #4C4958 #4C4958 #ebdbb2 #382449
-   client.unfocused            #4C4958 #4C4958 #ebdbb2 #382449
+   client.focused_inactive     #00000000 #4C495800 #ebdbb2 #382449
+   client.unfocused            #00000000 #4C495800 #ebdbb2 #382449
    client.urgent               #bf616a #bf616a #ee0000 #bf616a
 
-# Floating
+# Floating Windows
   for_window [class="Lxappearance"] floating enable
   for_window [class="Seahorse"] floating enable
   for_window [class="Pavucontrol"] floating enable
-
 
 # Volume & Media Bindings
   bindsym XF86AudioLowerVolume exec --no-startup-id pulseaudio-ctl down
   bindsym XF86AudioRaiseVolume exec --no-startup-id pulseaudio-ctl up
   bindsym XF86AudioMute exec gnome-terminal
   bindsym XF86AudioPlay exec mpc toggle
+  bindsym XF86Mail exec NETBrightnessControl --dec 5
+  bindsym XF86WWW exec NETBrightnessControl --inc 5
   bindsym XF86AudioPause exec playerctl pause
   bindsym XF86AudioNext exec mpc next
   bindsym XF86AudioPrev exec mpc prev
-  bindsym XF86Mail exec mpc toggle
-  bindsym XF86WWW exec mpc next
 
-  #set $base00 #101218
-  #set $base01 #1f222d
-  #set $base02 #252936
-  #set $base03 #7780a1
-  #set $base04 #C0C5CE
-  #set $base05 #d1d4e0
-  #set $base06 #C9CCDB
-  #set $base07 #ffffff
-  #set $base08 #ee829f
-  #set $base09 #f99170
-  #set $base0A #ffefcc
-  #set $base0B #a5ffe1
-  #set $base0C #97e0ff
-  #set $base0D #97bbf7
-  #set $base0E #c0b7f9
-  #set $base0F #fcc09e
+# Set wallpaper
+exec_always feh --bg-scale ~/Pictures/wallpaper.png
+#exec sudo openvpn --config /etc/openvpn/client/UK_London.conf
 
-# Window
-for_window [class="^.*"] border pixel 2
-
-# Autoexec
-set workspace $workspace1
+# Window Border Options
+for_window [class="^.*"] border pixel 0
 
 # Hide Edge Borders
 hide_edge_borders both
 
-# Mount HDD Faster than fstab
+# i3-gaps gaps
+gaps outer 20
+gaps inner 20
 
-assign [class="termite"] $workspace1
-assign [class="Steam"] $workspace3
-assign [class="steam"] $workspace3
-assign [class="Firefox"] $workspace2
-
-exec firefox
-exec steam
+# Start Compositor
 exec compton
 
-#exec gnome-terminal -e 'ncmpcpp'
-#exec gnome-terminal -e "bash --rcfile ~/CMatrixRC"
-#exec gnome-terminal -e "bash --rcfile ~/ScreenfetchRC"
-#exec gnome-terminal -e 'ranger'
+# xfce4-appfinder hotkey
+bindsym $mod+F2 exec "xfce4-appfinder";
+for_window [class="Xfce4-appfinder"] floating enable; focus;
+for_window [class="Xfce4-appfinder"] focus; resize shrink width 10000px; resize grow width 545px; resize shrink height 10000px; resize grow height 442px;
+
+# rofi hotkey
+bindsym $mod+d exec rofi -show run -lines 10 -eh 1 -fullscreen -padding 300 -font "Roboto Mono Medium 12"
+bindsym Print exec "shutter -s -e"
+bindsym $mod+o border toggle
+
+# Start default applications in default workspaces.
+# exec_always --no-startup-id i3-msg 'workspace4:$workspace4; exec /usr/bin/firefox'
